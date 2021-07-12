@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --verbose"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,8 @@
     "jest": "^27.0.6"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24"
+    "@babel/preset-env": "^7.14.7",
+    "@types/jest": "^26.0.24",
+    "babel-jest": "^27.0.6"
   }
 }
