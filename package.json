@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/pawlovskiii/abstract-syntax-trees/issues"
   },
-  "homepage": "https://github.com/pawlovskiii/abstract-syntax-trees#readme"
+  "homepage": "https://github.com/pawlovskiii/abstract-syntax-trees#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24"
+  }
 }
