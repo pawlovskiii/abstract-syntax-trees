@@ -1,7 +1,6 @@
 const ast_a = {
 	nodeType: 'element',
 	tagName: 'div',
-	attributes: [{ name: 'class', value: 'test' }],
 	children: [
 		{
 			nodeType: 'text',
@@ -22,4 +21,14 @@ const ast_b = {
 	],
 };
 
-export { ast_a, ast_b };
+const ast_c = {
+	nodeType: 'element',
+	tagName: 'main',
+	attributes: [
+		{ name: 'class', value: 'test' },
+		{ name: 'id', value: 'root' },
+	],
+	children: [{ nodeType: 'text', value: 'Welcome' }],
+};
+
+export { ast_a, ast_b, ast_c };
