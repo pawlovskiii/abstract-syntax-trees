@@ -8,6 +8,7 @@ const ast_a = {
 		},
 	],
 };
+const a_result = `<div>Hello world!</div>`;
 
 const ast_b = {
 	nodeType: 'element',
@@ -20,6 +21,7 @@ const ast_b = {
 		},
 	],
 };
+const b_result = `<p id="root">Intro to AST</p>`;
 
 const ast_c = {
 	nodeType: 'element',
@@ -30,5 +32,28 @@ const ast_c = {
 	],
 	children: [{ nodeType: 'text', value: 'Welcome' }],
 };
+const c_result = `<main id="root" class="test">Welcome</main>`;
 
-export { ast_a, ast_b, ast_c };
+const ast_d = {
+	nodeType: 'element',
+	tagName: 'header',
+	attributes: [{ name: 'class', value: 'header' }],
+	children: [
+		{
+			nodeType: 'element',
+			tagName: 'h1',
+			attributes: [{ name: 'class', value: 'hero-text' }],
+			children: [{ nodeType: 'text', value: 'Las Vegas' }],
+		},
+		{
+			nodeType: 'element',
+			tagName: 'p',
+			attributes: [{ name: 'class', value: 'about-us-info' }],
+			children: [{ nodeType: 'text', value: 'Great fun and adventure.' }],
+		},
+	],
+};
+const d_result = `'<header class="header><h1 class="hero-text">Las Vegas</h1><p class="about-us-info">Great fun and adventure.</p>'`;
+
+export { ast_a, ast_b, ast_c, ast_d };
+export { a_result, b_result, c_result, d_result };
