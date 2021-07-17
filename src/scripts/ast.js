@@ -1,3 +1,5 @@
+const invalid_ast_A = {};
+
 const ast_a = {
 	nodeType: 'element',
 	tagName: 'div',
