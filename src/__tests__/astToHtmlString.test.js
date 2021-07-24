@@ -15,24 +15,19 @@ import { astToHtmlString } from '../scripts/astToHtmlString.js';
 
 describe('Possible error handling', () => {
 	it('should throw an error if no object is passed', () => {
-		const result = astToHtmlString();
-		expect(result).toThrow('Invalid input');
+		expect(() => astToHtmlString('')).toThrow('Invalid input');
 	});
 	it(`should throw an error if ast object doesn't contain 'nodeType' property`, () => {
-		const result = astToHtmlString(invalid_ast_A);
-		expect(result).toThrow('Invalid input');
+		expect(() => astToHtmlString(invalid_ast_A)).toThrow('Invalid input');
 	});
 	it(`should throw an error if ast object doesn't contain 'tagName' property`, () => {
-		const result = astToHtmlString(invalid_ast_B);
-		expect(result).toThrow('Invalid input');
+		expect(() => astToHtmlString(invalid_ast_B)).toThrow('Invalid input');
 	});
 	it(`should throw an error if ast object contains invalid 'attributes' property`, () => {
-		const result = astToHtmlString(invalid_ast_C);
-		expect(result).toThrow('Invalid input');
+		expect(() => astToHtmlString(invalid_ast_C)).toThrow('Invalid input');
 	});
 	it(`should throw an error if ast object contains invalid 'nodeType' property`, () => {
-		const result = astToHtmlString(invalid_ast_D);
-		expect(result).toThrow('Invalid input');
+		expect(() => astToHtmlString(invalid_ast_D)).toThrow('Invalid input');
 	});
 });
 
