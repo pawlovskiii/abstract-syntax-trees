@@ -3,10 +3,11 @@ import { htmlVoidElements } from './htmlVoidElements.js';
 function astToHtmlString(ast) {
 	if (typeof ast !== 'object') throw Error('Invalid input');
 	const { nodeType, tagName, attributes, children, value } = ast;
-	return `${openingTag(tagName, nodeType, attributes)}${tagContent(children)}${closingTag(
-		nodeType,
-		tagName
-	)}`;
+	if (!attributes || !tagName || typeof attributes != 'object') throw Error('Invalid input');
+	if (nodeType != 'element') throw Error('Invalid input');
+	return `${openingTag(tagName, nodeType, attributes)}${tagContent(
+		children
+	)}${closingTag(nodeType, tagName)}`;
 }
 
 function extractAttributes(attributes) {
