@@ -1,3 +1,4 @@
+import { astToHtmlString } from '../scripts/astToHtmlString.js';
 import {
 	invalid_ast_A,
 	invalid_ast_B,
@@ -11,7 +12,6 @@ import {
 	c_result,
 	d_result,
 } from '../scripts/astTestObj.js';
-import { astToHtmlString } from '../scripts/astToHtmlString.js';
 
 describe('Possible error handling', () => {
 	it('should throw an error if no object is passed', () => {
