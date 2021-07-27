@@ -3,15 +3,15 @@ import { htmlVoidElements } from './htmlVoidElements.js';
 function astToHtmlString(ast) {
 	if (typeof ast !== 'object') throw Error('Invalid input');
 	const { nodeType, tagName, attributes, children, value } = ast;
-	if (!attributes || !tagName || typeof attributes != 'object') throw Error('Invalid input');
-	if (nodeType != 'element') throw Error('Invalid input');
+	if (nodeType != 'element' || tagName === undefined) throw Error('Invalid input');
 	return `${openingTag(tagName, nodeType, attributes)}${tagContent(
 		children
 	)}${closingTag(nodeType, tagName)}`;
 }
 
 function extractAttributes(attributes) {
-	return attributes.map(({ name, value }) => `${name}="${value}"`).join('');
+	if (typeof attributes !== 'object') throw Error('Invalid input')
+	return attributes.map(({ name, value }) => `${name}="${value}"`).join(' ');
 }
 
 function isSelfClosingTag(nodeType, tagName) {
@@ -19,6 +19,9 @@ function isSelfClosingTag(nodeType, tagName) {
 }
 
 function openingTag(tagName, nodeType, attributes) {
+	if (!attributes) {
+		return isSelfClosingTag(nodeType, tagName) ? `${tagName}` : `<${tagName}>`;
+	}
 	return isSelfClosingTag(nodeType, tagName)
 		? `${tagName} ${extractAttributes(attributes)}`
 		: `<${tagName} ${extractAttributes(attributes)}>`;

@@ -32,7 +32,7 @@ describe('Possible error handling', () => {
 });
 
 describe('AST object to HTML string', () => {
-	it.skip(`should convert to 'div' tag with inner text`, () => {
+	it(`should convert to 'div' tag with inner text`, () => {
 		const result = astToHtmlString(ast_a);
 		expect(result).toBe(a_result);
 	});
@@ -40,7 +40,7 @@ describe('AST object to HTML string', () => {
 		const result = astToHtmlString(ast_b);
 		expect(result).toBe(b_result);
 	});
-	it.skip(`should convert to 'main' tag with two attributes and inner text`, () => {
+	it(`should convert to 'main' tag with two attributes and inner text`, () => {
 		const result = astToHtmlString(ast_c);
 		expect(result).toBe(c_result);
 	});

@@ -69,7 +69,7 @@ const ast_c = {
 	],
 	children: [{ nodeType: 'text', value: 'Welcome' }],
 };
-const c_result = `<main id="root" class="test">Welcome</main>`;
+const c_result = `<main class="test" id="root">Welcome</main>`;
 
 const ast_d = {
 	nodeType: 'element',
@@ -90,7 +90,7 @@ const ast_d = {
 		},
 	],
 };
-const d_result = `'<header class="header><h1 class="hero-text">Las Vegas</h1><p class="about-us-info">Great fun and adventure.</p>'`;
+const d_result = `'<header class="header><h1 class="hero-text">Las Vegas</h1><p class="about-us-info">Great fun and adventure.</p></header>'`;
 
 export { ast_a, ast_b, ast_c, ast_d };
 export { a_result, b_result, c_result, d_result };
