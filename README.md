@@ -6,9 +6,10 @@
 </h1
 <p> </p>
 
-
+### General info 
+My implementation of algorithm, that converts AST objects to HTML strings. Abstract Syntax Trees (AST) is an object representation of certain piece of HTML.
 ### Technologies
-Implementation created with Jest (as testing framework), ESLint (for improving syntax and enforce code style) and babel-jest (to enable the use of ES6 Modules with Jest framework).
+Implementation created with Jest (as testing framework), ESLint (for improving syntax and enforce code style) and babel-jest (to enable the use of ES6 Modules with Jest framework). During this project, I mainly wanted to focus on single-responsibility principle within the algorithm. In order to achieve that, I created more functions, where each one is having one job.
 Name  | Versions
 --- | --- 
 Node.js  | 16.4.0
