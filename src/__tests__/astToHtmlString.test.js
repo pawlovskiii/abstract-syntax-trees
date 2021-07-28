@@ -44,8 +44,4 @@ describe('AST object to HTML string', () => {
 		const result = astToHtmlString(ast_c);
 		expect(result).toBe(c_result);
 	});
-	it.skip('should convert to header with two children', () => {
-		const result = astToHtmlString(ast_d);
-		expect(result).toBe(d_result);
-	});
 });
